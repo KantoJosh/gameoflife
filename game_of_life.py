@@ -43,6 +43,10 @@ def get_neighbors(cell_coordinate):
 
 
 def update_alive_cells(alive_cells):
+    '''
+    Returns a set of all the alive cells after one step/iteration
+    of the Game of Life algorithm.
+    '''
     cell_neighbor_freq = defaultdict(int)
     for cell in alive_cells:
         neighbors = get_neighbors(cell)
@@ -60,6 +64,11 @@ def update_alive_cells(alive_cells):
     return new_alive_cells
 
 def game_of_life(alive_cells, iterations):
+    """
+    Wrapper around update function
+    Returns all the alive cells after N iterations
+    of the Game of Life algorithm
+    """
     # print(alive_cells)
     for _ in range(iterations):
         alive_cells = update_alive_cells(alive_cells)
@@ -68,6 +77,10 @@ def game_of_life(alive_cells, iterations):
 
 
 def output(alive_coordinates):
+    '''
+    Prints all alive cells to standard 
+    output in the Life 1.06 format
+    '''
     # Life 1.06 format: 
     # https://conwaylife.com/wiki/Life_1.06#:~:text=The%20Life%201.06%20file%20format,lif%20or%20.
     print("#Life 1.06")
@@ -75,14 +88,6 @@ def output(alive_coordinates):
         print(f"{x} {y}")
 
 if __name__ == "__main__":
-    # Sample input:
-    # (0, 1)
-    # (1, 2)
-    # (2, 0)
-    # (2, 1)
-    # (2, 2)
-    # (-2000000000000, -2000000000000)
-    # (-2000000000001, -2000000000001)
     NUM_ITERATIONS = 1
     alive_cells = game_of_life(get_alive_coordinates(), NUM_ITERATIONS)
     
