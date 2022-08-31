@@ -73,7 +73,7 @@ def game_of_life(alive_cells, iterations):
     return alive_cells
 
 
-def output(alive_coordinates):
+def output(alive_cells):
     '''
     Prints all alive cells to standard 
     output in the Life 1.06 format
@@ -81,7 +81,7 @@ def output(alive_coordinates):
     # Life 1.06 format: 
     # https://conwaylife.com/wiki/Life_1.06#:~:text=The%20Life%201.06%20file%20format,lif%20or%20.
     print("#Life 1.06")
-    for x,y in alive_coordinates:
+    for x,y in alive_cells:
         print(f"{x} {y}")
 
 if __name__ == "__main__":
