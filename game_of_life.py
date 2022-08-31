@@ -85,7 +85,7 @@ def output(alive_coordinates):
         print(f"{x} {y}")
 
 if __name__ == "__main__":
-    NUM_ITERATIONS = 1
+    NUM_ITERATIONS = 10
     alive_cells = game_of_life(get_alive_coordinates(), NUM_ITERATIONS)
     
     output(alive_cells)
