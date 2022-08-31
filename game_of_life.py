@@ -51,9 +51,9 @@ def update_alive_cells(alive_cells):
     
     new_alive_cells = set()
     for cell in cell_neighbor_freq:
-            # dead --> stay alive
-        if (cell_neighbor_freq[cell] == 3 or cell_neighbor_freq[cell] == 2) or (
-            # alive --> alive
+            # dead --> alive
+        if (cell_neighbor_freq[cell] == 3) or (
+            # alive --> stay alive
             cell in alive_cells and cell_neighbor_freq[cell] == 2):
             new_alive_cells.add(cell)
     
