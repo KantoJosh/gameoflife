@@ -15,7 +15,6 @@ def get_alive_coordinates():
         # parse coordinate
         x,y = line.strip("()\n").split(", ")
         # convert from strings -> fixed size ints
-        # print(x,y)
         coordinate = (np.int64(x), np.int64(y))
         alive_coordinates.add(coordinate)
 
@@ -69,10 +68,8 @@ def game_of_life(alive_cells, iterations):
     Returns all the alive cells after N iterations
     of the Game of Life algorithm
     """
-    # print(alive_cells)
     for _ in range(iterations):
         alive_cells = update_alive_cells(alive_cells)
-        # print(alive_cells)
     return alive_cells
 
 
