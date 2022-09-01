@@ -2,8 +2,8 @@ import numpy as np
 import sys
 from collections import defaultdict
 
-INT_64_MAX = 9223372036854775807
-INT_64_MIN = -9223372036854775808
+INT64_MAX = 9223372036854775807
+INT64_MIN = -9223372036854775808
 
 def get_alive_coordinates():
     """
@@ -38,7 +38,7 @@ def get_neighbors(cell_coordinate):
         (row + 1, column),
         (row + 1, column + 1)
     ]
-    return list(filter(lambda n: INT_64_MIN < n[0] < INT_64_MAX and INT_64_MIN < n[1] < INT_64_MAX ,neighbors))
+    return list(filter(lambda n: INT64_MIN < n[0] < INT64_MAX and INT64_MIN < n[1] < INT64_MAX ,neighbors))
 
 
 def update_alive_cells(alive_cells):
