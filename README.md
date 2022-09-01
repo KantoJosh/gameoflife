@@ -1,4 +1,6 @@
 # Run
+NOTE: you will need the ```numpy``` package to run the below commands. If you don't already have it, install it via 
+`pip3 install numpy`
 
 To run and output to console:
 
